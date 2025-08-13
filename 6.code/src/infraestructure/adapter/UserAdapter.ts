@@ -1,7 +1,7 @@
 import { Repository } from "typeorm";
 import { User } from "../../domain/User";
 import { UserPort } from "../../domain/UserPort";
-import { UserEntity } from "../entitys/UserEntity";
+import { UserEntity } from "../entities/UserEntity";
 import { AppDataSourse } from "../config/con_data_base";
 
 export class UserAdapter implements UserPort {
