@@ -2,6 +2,7 @@ import { Router } from "express";
 import { UserApplication } from "../../application/UserApplication";
 import { UserAdapter } from "../adapter/UserAdapter";
 import { UserController } from '../controller/UserController';
+import { validateUser } from "../middleware/validateUser";
 
 
 //Express
@@ -21,6 +22,9 @@ router.post("/users", async (request,  response) =>{
     }
 }
 
+);
+router.post("/register", validateUser, (request, response) =>
+  userController.registerUser(request, response)
 );
 
 router.get("/users",  async(request, response) => {
